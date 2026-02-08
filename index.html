@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Pomodoro Focus Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="glass">
+        <header>
+          <h1>Focus Flow</h1>
+          <p>Your online Pomodoro companion</p>
+        </header>
+
+        <section class="mode-selector" aria-label="Timer mode">
+          <button class="mode-btn active" data-mode="focus">Focus</button>
+          <button class="mode-btn" data-mode="short">Short Break</button>
+          <button class="mode-btn" data-mode="long">Long Break</button>
+        </section>
+
+        <section class="timer-wrap" aria-live="polite">
+          <svg class="progress-ring" width="240" height="240" viewBox="0 0 240 240">
+            <circle cx="120" cy="120" r="104" class="ring-bg"></circle>
+            <circle cx="120" cy="120" r="104" class="ring-progress" id="ringProgress"></circle>
+          </svg>
+          <div class="timer-center">
+            <span id="timeDisplay">25:00</span>
+            <small id="statusText">Ready to focus</small>
+          </div>
+        </section>
+
+        <section class="controls">
+          <button id="startPauseBtn" class="primary">Start</button>
+          <button id="resetBtn" class="ghost">Reset</button>
+          <button id="notifyBtn" class="ghost">Enable Notifications</button>
+        </section>
+
+        <section class="stats">
+          <article>
+            <h2 id="completedCount">0</h2>
+            <p>Completed Focus Sessions</p>
+          </article>
+          <article>
+            <h2 id="cycleCount">0</h2>
+            <p>Pomodoro Cycles</p>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
